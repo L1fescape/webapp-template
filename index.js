@@ -22,8 +22,10 @@ var
 
     // application variables
     httpsEnabled = false, // set to enable/disable https
-    privKeyLoc = "some/path",
-    certLoc = "some/other/path";
+    privKeyLoc = "some/path/privatekey.pem",
+    certLoc = "some/path/certificate.pem",
+    httpPort = 3000,
+    httpsPort = 3333;
 
     
 // http server
@@ -50,12 +52,12 @@ app.options("*", function(req, res) {
 app.post("/route/:someID/update", function (req, res) {
   // object that will hold reponse data. will be stringified before
   // being sent back with the response.
-  var respObj = {};
-  // get post body variables
-  var myVar1 = req.body.myVar1,
-      myVar2 = req.body.myVar2,
+  var respObj = {},
   // get variables passed via the route
-      myID = req.params.someID;
+      myID = req.params.someID,
+  // get post body variables
+      myVar1 = req.body.myVar1,
+      myVar2 = req.body.myVar2;
 
   // add models to our database. in this case,
   // create a user and return that created user id and session token
@@ -116,13 +118,11 @@ app.get("/some/route", function (req, res) {
   });
 });
 
-
+// run https server if https is enabled
 if (httpsEnabled) {
-  var httpsPort = 3333;
   httpsServer.listen(httpsPort);
   console.log("HTTPS listening on port", httpsPort);
 }
-
-var port = 3000;
-httpServer.listen(port);
-console.log("Listening on port", port);
+// run http server
+httpServer.listen(httpPort);
+console.log("Listening on port", httpPort);
