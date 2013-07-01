@@ -1,0 +1,24 @@
+{
+	"name": "Snout",
+	"version": "0.0.0",
+	"description": "Api server for Snout.",
+	"author": "Andrew Kennedy and Bjorn Stange",
+	"license": "BSD",
+	"readmeFilename": "README.md",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Mobiquity/Snout-Server.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Mobiquity/Snout-Server/issues"
+	},
+	"main": "index.js",
+	"dependencies": {
+		"express": "~3.2.6",
+		"mysql": "2.0.0-alpha7",
+		"orm": "~2.0.13",
+		"node-uuid": "1.4.0",
+		"underscore": "~1.4.4"
+	},
+	"devDependencies": {}
+}
