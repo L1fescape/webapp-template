@@ -1,18 +1,11 @@
 {
-	"name": "Snout",
+	"name": "webapp-template",
 	"version": "0.0.0",
-	"description": "Api server for Snout.",
-	"author": "Andrew Kennedy and Bjorn Stange",
+	"description": "Template webapp description.",
+	"author": "",
 	"license": "BSD",
 	"readmeFilename": "README.md",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/Mobiquity/Snout-Server.git"
-	},
-	"bugs": {
-		"url": "https://github.com/Mobiquity/Snout-Server/issues"
-	},
-	"main": "index.js",
+	"main": "server/web.js",
 	"dependencies": {
 		"express": "~3.2.6",
 		"mysql": "2.0.0-alpha7",

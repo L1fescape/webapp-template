@@ -6,8 +6,8 @@ A full-stack template for creating a web application with Backbone and RequireJS
 
 ##### For Development:
 
-Install [Nodejs](http://nodejs.org/download/)
-Install [Bower](https://github.com/bower/bower) 
+- Install [Nodejs](http://nodejs.org/download/)
+- Install [Bower](https://github.com/bower/bower) 
 
 Then run:
 
@@ -16,12 +16,14 @@ npm install
 bower install
 ```
 
-This will install bower, install npm packages, and go out and fetch client-side libraries (jquery, backbone, etc).
+This will install npm packages and go out and fetch client-side libraries (jquery, backbone, etc).
+
+Note: Replace `NAMESPACE` in `app/js/main.js` and `app/js/router.js` with a namespace of your liking.
 
 ##### For Production:
 
-Install [Nodejs](http://nodejs.org/download/)
-Install [Bower](https://github.com/bower/bower) 
+- Install [Nodejs](http://nodejs.org/download/)
+- Install [Bower](https://github.com/bower/bower) 
 
 Then run:
 
