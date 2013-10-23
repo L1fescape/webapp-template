@@ -1,0 +1,27 @@
+var
+  // api server
+  apiHost = "localhost",
+  apiPort = 3000,
+  apiPrefix = ""
+
+  // web server
+  webHost = "localhost",
+  webPort = 3001,
+  webDir = "/app"
+  
+  // database credentials
+  dbname = "",
+  dbusername = "",
+  dbpassword = ""
+
+  // exports
+exports.apiHost = apiHost
+exports.apiPort = apiPort
+exports.apiPrefix = apiPrefix
+exports.webHost = webHost
+exports.webPort = webPort
+exports.webDir = webDir
+
+exports.dbname = dbname
+exports.dbusername = dbusername
+exports.dbpassword = dbpassword
