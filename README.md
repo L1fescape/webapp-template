@@ -1,4 +1,4 @@
-# Webapp-Skeleton
+# Webapp Template
 
 A full-stack template for creating a web application with Backbone and RequireJS driving the frontend and NodeJS and MySQL powering the backend.
 
