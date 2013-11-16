@@ -26,7 +26,7 @@ function(Backbone, Services, Events, HeaderView, FooterView, HomeView, AboutView
     about: function() {
       // tell the previous view to close itself
       Events.trigger("views:closePage");
-      // draw the home view
+      // draw the about view
       this.vPgBody = new AboutView();
     },
 

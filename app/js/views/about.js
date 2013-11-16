@@ -17,7 +17,6 @@ function(Backbone, Services, Events, tpl) {
     },
 
     close: function() {
-      console.log("about close");
       Events.off();
       this.unbind();
       this.undelegateEvents();
