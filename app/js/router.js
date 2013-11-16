@@ -1,29 +1,37 @@
-define(['backbone', 'services', 'views/header', 'views/footer', 'views/home'],
-function(Backbone, Services, HeaderView, FooterView, HomeView) {
+define(['backbone', 'services', 'events', 'views/header', 'views/footer', 'views/home', 'views/about'],
+function(Backbone, Services, Events, HeaderView, FooterView, HomeView, AboutView) {
   return Backbone.Router.extend({
     prevRoute: "",
 
     routes: {
       '' : 'home',
+      'about' : 'about'
     },
 
     initialize: function() {
       // keep track of the last route visited (useful to prevent redrawing views)
       Backbone.history.on('route', function() { this.prevRoute = window.location.hash; }, this);
       // init the header and the footer
-      NAMESPACE.vPgHeader = new HeaderView();
-      NAMESPACE.vPgFooter = new FooterView();
+      this.vPgHeader = new HeaderView();
+      this.vPgFooter = new FooterView();
     },
 
     home: function() {
       // tell the previous view to close itself
-      NAMESPACE.dispatcher.trigger("views:closePage");
+      Events.trigger("views:closePage");
       // draw the home view
-      NAMESPACE.vPgHome = new HomeView();
+      this.vPgBody = new HomeView();
+    },
+    
+    about: function() {
+      // tell the previous view to close itself
+      Events.trigger("views:closePage");
+      // draw the home view
+      this.vPgBody = new AboutView();
     },
 
     routeToHome: function() {
-      NAMESPACE.router.navigate('#/', {
+      this.navigate('#/', {
         trigger: true
       });
     },

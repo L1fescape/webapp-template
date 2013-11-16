@@ -1,4 +1,4 @@
-define(['backbone', 'services', 'events', 'tpl!templates/home.tpl'], 
+define(['backbone', 'services', 'events', 'tpl!templates/about.tpl'], 
 function(Backbone, Services, Events, tpl) {
   return Backbone.View.extend({
     el: $("#dPage"),
@@ -17,7 +17,7 @@ function(Backbone, Services, Events, tpl) {
     },
 
     close: function() {
-      console.log("home close")
+      console.log("about close");
       Events.off();
       this.unbind();
       this.undelegateEvents();

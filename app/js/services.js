@@ -1,4 +1,4 @@
-define(['jquery', 'utils/cookies'], function($, Cookies) {
+define(['jquery', 'events', 'utils/cookies'], function($, Events, Cookies) {
   // user data
   var userInfo = {};
 
@@ -71,11 +71,11 @@ define(['jquery', 'utils/cookies'], function($, Cookies) {
         
         userInfo = data;
 
-        NAMESPACE.dispatcher.trigger('user:update:success', data);
+        Events.trigger('user:update:success', data);
       });
 
       promise.fail(function(data) {
-        NAMESPACE.dispatcher.trigger('user:update:fail', data);
+        Events.trigger('user:update:fail', data);
       });
 
       return promise;

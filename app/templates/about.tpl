@@ -1,8 +1,8 @@
 <div class="body-wrapper">
-  HOME
+  ABOUT
 
   <br />
   <br />
 
-  <a href="#/about">Go to About</a>
+  <a href="#/">Go Home</a>
 </div>

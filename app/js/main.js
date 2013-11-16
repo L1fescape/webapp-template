@@ -24,16 +24,8 @@ require.config({
 
 require(['backbone', 'services', 'router'], function (Backbone, Services, Router) {
   $(document).ready(function() {
-
-    // create namespaces
-    window.NAMESPACE = window.NAMESPACE || {};
-    NAMESPACE.dispatcher = NAMESPACE.dispatcher || {};
-
-    // create a global dispatcher of events
-    _.extend(NAMESPACE.dispatcher, Backbone.Events);
-
     // create the main app router
-    NAMESPACE.router = new Router();
+    var router = new Router();
     Backbone.history.start();
   });
 });

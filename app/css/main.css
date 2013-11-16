@@ -45,3 +45,12 @@ body {
   padding:20px;
   height:70px;
 }
+
+
+/* -- Body -- */
+
+#dPage {
+  padding:20px;
+  width:970px;
+  margin:70px auto 0;
+}
