@@ -11,8 +11,8 @@ var
   
   // database credentials
   dbname = "",
-  dbusername = "",
-  dbpassword = "",
+  dbuser = "",
+  dbpass = "",
   dbhost = "",
   dbport = 3306
 
