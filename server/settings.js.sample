@@ -12,7 +12,9 @@ var
   // database credentials
   dbname = "",
   dbusername = "",
-  dbpassword = ""
+  dbpassword = "",
+  dbhost = "",
+  dbport = 3306
 
   // exports
 exports.apiHost = apiHost
@@ -23,5 +25,7 @@ exports.webPort = webPort
 exports.webDir = webDir
 
 exports.dbname = dbname
-exports.dbusername = dbusername
-exports.dbpassword = dbpassword
+exports.dbuser = dbuser
+exports.dbpass = dbpass
+exports.dbhost = dbhost
+exports.dbport = dbport

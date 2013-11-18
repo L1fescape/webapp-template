@@ -1,12 +1,13 @@
-var orm = require('orm');
+var orm = require('orm'),
+    settings = require('./settings')
 
 var opts = {
-  database : "[Database Name]",
+  database : settings.dbname,
   protocol : "mysql",
-  host     : "localhost",
-  port     : 3306,         // optional, defaults to database default
-  user     : "[username]",
-  password : "[password]",
+  host     : settings.dbhost,
+  port     : settings.dbport,
+  user     : settings.dbuser,
+  password : settings.dbpass,
   query    : {
     pool     : false,   // optional, false by default
     debug    : false    // optional, false by default
