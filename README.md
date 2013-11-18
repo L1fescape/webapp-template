@@ -1,6 +1,16 @@
 # Webapp Template
 
-A full-stack template for creating a web application with Backbone and RequireJS driving the frontend and NodeJS and MySQL powering the backend.
+A full-stack template for creating a web application with BackboneJS and RequireJS driving the frontend and NodeJS and MySQL powering the backend.
+
+
+## Structure
+
+- **server/**
+ - **api.js** - API server
+ - **web.js** - Static file server
+- **app/**: All static files for the frontend.
+ - **libs/**: Created once `Bower` is run. Libraries used on the frontend.
+- **dist/**: Created once the frontend app is built for production using `r`.
 
 ## Building
 
@@ -17,8 +27,6 @@ bower install
 ```
 
 This will install npm packages and go out and fetch client-side libraries (jquery, backbone, etc).
-
-Note: Replace `NAMESPACE` in `app/js/main.js` and `app/js/router.js` with a namespace of your liking.
 
 ##### For Production:
 
