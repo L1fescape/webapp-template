@@ -5,9 +5,7 @@ A full-stack NodeJS web application template built with [Marionette](https://git
 
 ## Building
 
-- Install [Nodejs](http://nodejs.org/download/)
-
-Then run:
+Install [Nodejs](http://nodejs.org/download/), then run:
 
 ```
 npm install

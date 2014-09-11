@@ -4,20 +4,12 @@
 // Import packages
 var express = require('express');
 var app = express();
+var serveStatic = require('serve-static')
 var bodyParser = require('body-parser');
 
 // Configure app to use bodyParser() for parsing POST body parameters
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-// Middleware for all requests 
-app.use(function(req, res, next) {
-  res.setHeader('Content-Type', 'application/json');
-  next();
-});
-
-// Serve static frontend assets
-app.use(express.static('../dist'));
 
 // Variables and settings
 var port = process.env.PORT || 3000;
@@ -30,11 +22,22 @@ var host = process.env.HOST || '0.0.0.0';
 // Config
 // ------
 
+// Serve static frontend assets (must be absolute path)
+var dir = __dirname.split("/");
+dir.pop();
+app.use(serveStatic(dir.join("/") + '/dist'));
+
 // Create router
 var router  = express.Router();
 
 // Set router prefix
-app.use('/v1', router);
+app.use('/api', router);
+
+// Middleware for all api requests 
+router.use(function(req, res, next) {
+  res.setHeader('Content-Type', 'application/json');
+  next();
+});
 
 // Import resources
 var Users = require('./api/user');

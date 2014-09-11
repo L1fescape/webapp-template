@@ -1,0 +1,22 @@
+/* potential color schemes:
+  - https://kuler.adobe.com/Phaedra-color-theme-1764754/edit/?copy=true
+*/
+
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Exo+2);
+
+@import 'variables';
+
+body{
+  background-color: whiteSmoke;
+  padding: 0;
+  margin: 0;
+}
+
+#header{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 48px;
+  background: #453A38;
+  color: #eee;
+  padding: $padding;
+}
