@@ -1,17 +1,25 @@
 {
-	"name": "webapp-template",
-	"version": "0.0.0",
-	"description": "Template webapp description.",
-	"author": "",
-	"license": "BSD",
-	"readmeFilename": "README.md",
-	"main": "server/web.js",
-	"dependencies": {
-		"express": "~3.2.6",
-		"mysql": "2.0.0-alpha7",
-		"orm": "~2.0.13",
-		"node-uuid": "1.4.0",
-		"underscore": "~1.4.4"
-	},
-	"devDependencies": {}
+  "name": "webapp-template",
+  "version": "1.0.0",
+  "description": "Skeleton webapp with frontend and backend.",
+  "author": "Andrew Kennedy <andrew@akenn.org>",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "main": "server/web.js",
+  "dependencies": {
+    "body-parser": "^1.8.1",
+    "express": "^4.9.0",
+    "mongoose": "^3.8.16",
+    "mongoose-hash": "^0.2.0",
+    "q": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "karma": "^0.12.23",
+    "sinon": "^1.10.3"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "./node_modules/karma/bin/karma start"
+  }
 }
