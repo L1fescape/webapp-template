@@ -16,6 +16,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Serve static frontend assets
+app.use(express.static('../dist'));
+
 // Variables and settings
 var port = process.env.PORT || 3000;
 var host = process.env.HOST || '0.0.0.0';
