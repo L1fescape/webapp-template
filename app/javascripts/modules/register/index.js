@@ -1,34 +1,34 @@
 'use strict';
 var Marionette = require('backbone.marionette'),
-  LoginView = require('./view'),
+  RegistrationView = require('./view'),
   Radio = require('backbone.radio');
 
 var headerChannel = Radio.channel('header');
 
 module.exports = Marionette.Module.extend({
   startWithParent: true,
-  eventName: 'login',
+  eventName: 'register',
 
   region: null,
 
-  initialize: function(Login, app){
+  initialize: function(Register, app){
     this.region = app.body;
 
     // Bind events
-    headerChannel.comply('click:' + this.eventName, this.showLoginForm, this);
+    headerChannel.comply('click:' + this.eventName, this.showRegistrationForm, this);
   },
 
   onStart: function(){
     headerChannel.command('add:link', {
       eventName: this.eventName,
-      title: 'Login',
-      href: '#login'
+      title: 'Register',
+      href: '#register'
     });
   },
 
-  showLoginForm: function(){
-    var login = new LoginView(); 
-    this.region.show(login);
+  showRegistrationForm: function(){
+    var view = new RegistrationView(); 
+    this.region.show(view);
   }
 });
 

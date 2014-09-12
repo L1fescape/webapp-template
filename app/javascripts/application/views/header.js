@@ -1,33 +1,29 @@
 'use strict';
-var Marionette = require('backbone.marionette'),
+var ItemView = require('../../classes/item-view'),
   Radio = require('backbone.radio'),
-  template = require('../templates/header.handlebars'),
-  $ = require('jquery');
+  HeaderLinkView = require('./link'),
+  template = require('../templates/header.handlebars');
 
 var headerChannel = Radio.channel('header');
-var loginChannel = Radio.channel('login');
 
-module.exports = Marionette.ItemView.extend({
+module.exports = ItemView.extend({
   template: template,
-  className: 'container',
-
-  events: {
-    'click .login': 'showLogin'
-  },
+  childViewContainer: '.user-settings',
 
   initialize: function(){
-    headerChannel.comply('add:login', this.addLoginButton, this);
+    headerChannel.comply('add:link', this.addHeaderLink, this);
   },
 
-  addLoginButton: function(title, link){
-    var button = $('<a/>', {
-      text: title,
-      href: link
+  addHeaderLink: function(options){
+    options = options || {};
+
+    var link = new HeaderLinkView({
+      title: options.title,
+      href: options.href,
+      eventName: options.eventName,
+      preventDefault: options.preventDefault || true
     });
-    this.$el.find('.login').append(button);
-  },
 
-  showLogin: function(){
-    loginChannel.command('login:show');
+    this.addChildView(link);
   }
 });
