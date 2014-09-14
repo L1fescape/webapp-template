@@ -15,8 +15,33 @@ body{
 
 #header{
   font-family: 'Exo 2', sans-serif;
-  font-size: 48px;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
   background: #453A38;
   color: #eee;
   padding: $padding;
+  position: relative;
+  
+  .title{
+    margin: 0;
+  }
+}
+
+.user-settings{
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+  
+  li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: #408DCF;
 }

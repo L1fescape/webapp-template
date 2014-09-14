@@ -3,6 +3,7 @@ require('./application/init');
 var Application = require('./application/application');
 
 // Include modules
+Application.module('home', require('./modules/home'));
 Application.module('login', require('./modules/login'));
 Application.module('register', require('./modules/register'));
 
